@@ -42,6 +42,7 @@ document.getElementById("antagonist").appendChild(heroTwo)
 phrase=["This time it's personal","Oh, you think that will work","Time to butter the toast","This is gonna hurt!","You're funny, but looks aren't everything"]
 
 
+
 function attack(){
 	health = characters[1].health
 	health = health-10
@@ -51,19 +52,20 @@ function attack(){
 
 	if(health<90){
 
-
 		var randoPhrase = phrase[Math.floor(Math.random()*phrase.length)];
 		var myTurn = document.getElementById("myTurn")
 		myTurn.innerHTML = randoPhrase
 
 		var hurtLocker = [5, 10, 15, 20]
 		var randoHurt = hurtLocker[Math.floor(Math.random()*hurtLocker.length)]
-		healthOther = characters[0].health
-		healthOther = health-randoHurt
+		healthOther = characters[1].health
+		console.log(healthOther)
+		healthOther = healthOther-randoHurt
 		console.log(characters[0].health)
 		characters[0].health = healthOther
-		healthTwo.innerHTML = healthOther
+		healthOne.innerHTML = healthOther
 
 	}		
 	}
+	 
    
